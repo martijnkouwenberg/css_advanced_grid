@@ -1,0 +1,62 @@
+@import "./mixin";
+@import "./variables";
+
+body {
+	background-color: $site_background;
+}
+
+.grid_container {
+	@include grid_display_center;
+	@include gap_grid;
+	width: 1000px;
+	margin-top: 50px;
+	grid-template-columns: auto 1fr 1fr 1fr auto;
+	grid-template-rows: 300px 300px 300px;
+}
+.picture1 {
+	@include position_grid_pic();
+	grid-area: 1 / 2 / 1 / 2;
+}
+.picture2 {
+	@include position_grid_pic();
+	grid-area: 1 / 3 / 1 / 3;
+}
+.picture3 {
+	@include position_grid_pic();
+	grid-area: 1 / 4 / 1 / 4;
+}
+.picture4 {
+	@include position_grid_pic();
+	grid-area: 2 / 2 / 2 / 2;
+}
+.picture5 {
+	@include position_grid_pic();
+	grid-area: 2 / 3 / 2 / 3;
+}
+.picture6 {
+	@include position_grid_pic();
+	grid-area: 2 / 4 / 2 / 4;
+}
+.picture7 {
+	@include position_grid_pic();
+	grid-area: 3 / 2 / 3 / 2;
+}
+img {
+	border-radius: $prime_radius;
+}
+.image_overlay {
+	@include image_overlay;
+	@include flex-center(column);
+	border-radius: $prime_radius;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+
+	button {
+		@include prime_button;
+	}
+}
+
+.image_overlay:hover {
+	opacity: 1;
+}
+@import "./media_queries";
